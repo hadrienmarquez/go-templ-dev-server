@@ -23,6 +23,7 @@
             go.go_1_22
             pkgs.gotools
             templ.templ
+            pkgs.nodejs_21
             ];
     };
 
