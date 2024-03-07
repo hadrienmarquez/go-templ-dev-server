@@ -4,7 +4,7 @@
   inputs = {
    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; 
     go_pkgs.url =  "github:NixOS/nixpkgs/c0b7a892fb042ede583bdaecbbdc804acb85eabe";
-    templ_pkgs.url = "github:NixOS/nixpkgs/160b762eda6d139ac10ae081f8f78d640dd523eb";
+    templ_pkgs.url = "github:a-h/templ";
   };
 
   outputs = { self, nixpkgs, go_pkgs, templ_pkgs }: 
@@ -15,7 +15,7 @@
       inherit system;
     }; 
     go = go_pkgs.legacyPackages.${system};
-    templ = templ_pkgs.legacyPackages.${system};  
+    templ = templ_pkgs.packages.${system};  
     in {
     devShells.${system}.default =  pkgs.mkShell {
         
